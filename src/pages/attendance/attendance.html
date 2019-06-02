@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Attendance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="ion-content">
+  <ion-card (click)='go()'>
+    <ion-item color="primary">
+      <ion-label text-center><ion-icon name="add" slot="start"></ion-icon> Add Task</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-list *ngFor="let task of Tasks">
+    <ion-card class="less" (click)="editMe(task)">
+      <ion-item class="less" color="bg1">
+        <ion-card-header item-left class="truncate">{{task.heading}}</ion-card-header>
+        <ion-toggle color="tryMe" [(ngModel)]="task.isToday" (ionChange)="saveChanges(task)"></ion-toggle>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>

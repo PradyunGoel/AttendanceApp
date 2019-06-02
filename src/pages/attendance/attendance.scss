@@ -1,0 +1,28 @@
+page-attendance {
+    ion-content {
+        background-color: burlywood !important;
+    }
+    .button {
+        display: block;
+        max-width: 300px;
+        margin: auto;
+    }
+    ion-card {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+        padding: 0% !important;
+    }
+    ion-list ion-card.less {
+        height: 40px !important;
+        --background: khaki;
+    }
+    ion-list ion-card ion-item.less {
+        height: 40px !important;
+    }
+    ion-list ion-card ion-card-header.truncate {
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

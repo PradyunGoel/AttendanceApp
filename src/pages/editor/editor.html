@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Task</ion-title>
+    <button ion-button (click)="saveTask()">Save Task</button>  <!-- Create new function to update a task -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item>
+      <ion-select placeholder="Category" [(ngModel)]="category" (ionChange)="categoryChosen(category)"> <!-- Fetch from local list of tasks(which is initialised from the one on the db) -->
+        <ion-option *ngFor="let cat of categories">{{ cat }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-select placeholder="Subcategory" [(ngModel)]="subcategory"> <!-- Fetch from local list of tasks(which is initialised from the one on the db) -->
+        <ion-option *ngFor="let subcat of subcategories">{{ subcat }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-input placeholder="Location" [(ngModel)]="location"></ion-input>
+      <ion-toggle item-right [(ngModel)]="isChecked"></ion-toggle>
+      <ion-badge item-right>ISPF</ion-badge>
+    </ion-item>
+  </ion-card>
+    
+  
+  <ion-card>
+    <ion-item>
+      <ion-input placeholder = "Task Heading" [(ngModel)]="heading">{{ heading }}</ion-input> <!-- Fetch from local list of tasks(which is initialised from the one on the db) -->
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-textarea placeholder = "Description..." [(ngModel)]="description">{{ description }}</ion-textarea> <!-- Fetch from local list of tasks(which is initialised from the one on the db) -->
+    </ion-item>
+  </ion-card>
+
+  <ion-card item-right class="my">
+    <ion-item>
+      <ion-select value="status" [(ngModel)]="status" ok-Text="Done" cancel-Text="Cancel" class="ion-select">
+        <ion-option value="Planned">Planned</ion-option>
+        <ion-option value="Discontinued">Discontinued</ion-option>
+        <ion-option value="Blocked">Blocked</ion-option>
+        <ion-option value="Progress">In Progress</ion-option>
+        <ion-option value="Completed">Completed</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+  
+</ion-content>

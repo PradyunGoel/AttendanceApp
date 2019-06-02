@@ -1,17 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Ionic Blank
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+  <ion-card>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+      <ion-select placeholder="Category" [(ngModel)]="category" (ionChange)="catClicked()">
+        <ion-option *ngFor="let cat of categories">{{ cat }}</ion-option>
+      </ion-select>
     </ion-item>
-  </ion-list>
+  </ion-card>
+  
+  <ion-card>
+      <ion-select [(ngModel)]="subcategoryvar" placeholder="Subcategory..." disabled = false (ionChange) = "subcatChanged()">
+        <ion-option *ngFor="let subcategory of subcategories">{{ subcategory }}</ion-option>
+      </ion-select>
+  </ion-card>
 </ion-content>
